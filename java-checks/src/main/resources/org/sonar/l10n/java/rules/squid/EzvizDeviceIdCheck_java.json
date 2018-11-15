@@ -1,0 +1,16 @@
+{
+  "title": "设备序列号权限校验检查",
+  "type": "SECURITY_HOTSPOT",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "60min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Critical",
+  "ruleSpecification": "RSPEC-EzvizDeviceIdCheck",
+  "sqKey": "EzvizDeviceIdCheck",
+  "scope": "Main"
+}

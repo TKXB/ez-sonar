@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="example0" namespace="*" extends="struts-default">   <!-- Noncompliant -->
+        <action name="HelloWorld0" class="example.HelloWorld">
+            <result>/example/HelloWorld.jsp</result>
+        </action>
+    </package>
+    <package name="example1" namespace="/example" extends="struts-default">
+        <action name="HelloWorld1" class="example.HelloWorld">
+            <result>/example/HelloWorld.jsp</result>
+        </action>
+    </package>
+    <package name="example2" namespace="/*" extends="struts-default">  <!-- Noncompliant -->
+        <action name="HelloWorld2" class="example.HelloWorld">
+            <result>/example/HelloWorld.jsp</result>
+        </action>
+    </package>
+    <package name="example3" namespace="" extends="struts-default"> <!-- Noncompliant {{Be careful about this in the struts2 framework.}} -->
+        <action name="HelloWorld3" class="example.HelloWorld">
+            <result>/example/HelloWorld.jsp</result>
+        </action>
+    </package>
+</struts>

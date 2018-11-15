@@ -69,6 +69,8 @@ import org.sonar.java.checks.serialization.SerializableSuperConstructorCheck;
 import org.sonar.java.checks.spring.ControllerWithSessionAttributesCheck;
 import org.sonar.java.checks.spring.PersistentEntityUsedAsRequestParameterCheck;
 import org.sonar.java.checks.spring.RequestMappingMethodPublicCheck;
+import org.sonar.java.checks.spring.MyUuidCheck;
+import org.sonar.java.checks.spring.EzvizDeviceIdCheck;
 import org.sonar.java.checks.spring.SpringAntMatcherOrderCheck;
 import org.sonar.java.checks.spring.SpringAutoConfigurationCheck;
 import org.sonar.java.checks.spring.SpringBeansShouldBeAccessibleCheck;
@@ -100,16 +102,12 @@ import org.sonar.java.checks.unused.UnusedThrowableCheck;
 import org.sonar.java.checks.unused.UnusedTypeParameterCheck;
 import org.sonar.java.checks.xml.ejb.DefaultInterceptorsLocationCheck;
 import org.sonar.java.checks.xml.ejb.InterceptorExclusionsCheck;
-import org.sonar.java.checks.xml.maven.ArtifactIdNamingConventionCheck;
-import org.sonar.java.checks.xml.maven.DependencyWithSystemScopeCheck;
-import org.sonar.java.checks.xml.maven.DeprecatedPomPropertiesCheck;
-import org.sonar.java.checks.xml.maven.DisallowedDependenciesCheck;
-import org.sonar.java.checks.xml.maven.GroupIdNamingConventionCheck;
-import org.sonar.java.checks.xml.maven.PomElementOrderCheck;
+import org.sonar.java.checks.xml.maven.*;
 import org.sonar.java.checks.xml.spring.DefaultMessageListenerContainerCheck;
 import org.sonar.java.checks.xml.spring.SingleConnectionFactoryCheck;
 import org.sonar.java.checks.xml.struts.ActionNumberCheck;
 import org.sonar.java.checks.xml.struts.FormNameDuplicationCheck;
+import org.sonar.java.checks.xml.struts.MyNamespaceCheck;
 import org.sonar.java.checks.xml.web.SecurityConstraintsInWebXmlCheck;
 import org.sonar.java.checks.xml.web.ValidationFiltersCheck;
 import org.sonar.java.se.checks.BooleanGratuitousExpressionsCheck;
@@ -609,6 +607,8 @@ public final class CheckList {
       .add(SpringEndpointsCheck.class)
       .add(ExecCallCheck.class)
       .add(EmptyDatabasePasswordCheck.class)
+            .add(MyUuidCheck.class)
+            .add(EzvizDeviceIdCheck.class)
       .build();
   }
 
@@ -651,6 +651,7 @@ public final class CheckList {
       .add(ValidationFiltersCheck.class)
       .add(ActionNumberCheck.class)
       .add(FormNameDuplicationCheck.class)
+            .add(MyNamespaceCheck.class)
       .build();
   }
 
@@ -662,6 +663,8 @@ public final class CheckList {
       .add(ArtifactIdNamingConventionCheck.class)
       .add(DisallowedDependenciesCheck.class)
       .add(DeprecatedPomPropertiesCheck.class)
+            .add(EzvizStruts2_S2_057Check.class)
+            .add(Ezviz_CVE_2016_1000031Check.class)
       .build();
   }
 }

@@ -1,0 +1,16 @@
+{
+  "title": "此版本commons-fileupload包含高危漏洞",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "60min"
+  },
+  "tags": [
+    "apache"
+  ],
+  "defaultSeverity": "Critical",
+  "ruleSpecification": "RSPEC-Ezviz_CVE_2016_1000031Check",
+  "sqKey": "Ezviz_CVE_2016_1000031Check",
+  "scope": "All"
+}

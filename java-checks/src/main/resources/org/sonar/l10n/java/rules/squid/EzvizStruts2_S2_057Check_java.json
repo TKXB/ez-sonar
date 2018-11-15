@@ -1,0 +1,16 @@
+{
+  "title": "此版本struts2包含高危漏洞",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "60min"
+  },
+  "tags": [
+    "struts"
+  ],
+  "defaultSeverity": "Critical",
+  "ruleSpecification": "RSPEC-EzvizStruts2_S2_057Check",
+  "sqKey": "EzvizStruts2_S2_057Check",
+  "scope": "All"
+}

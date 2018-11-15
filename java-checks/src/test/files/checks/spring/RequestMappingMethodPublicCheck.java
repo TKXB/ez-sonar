@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class HelloWorld {
 
-  @RequestMapping(value = "/hello", method = RequestMethod.GET)
+  @RequestMapping(value = "/helloBitch", method = RequestMethod.GET)
   public String hello(String greetee) { // Compliant
   }
 
   @RequestMapping(value = "/greet", method = GET)
-  private String greet(String greetee) { // Noncompliant [[sc=18;ec=23]] {{Make this method "public".}}
+  private String greet(String greetee2) { // Noncompliant [[sc=18;ec=23]] {{Make this method "public".}}
   }
 
   @GetMapping
