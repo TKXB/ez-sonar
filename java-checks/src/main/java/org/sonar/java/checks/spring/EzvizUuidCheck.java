@@ -12,13 +12,9 @@ import org.sonar.plugins.java.api.tree.MethodTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.plugins.java.api.tree.VariableTree;
 
-@Rule(key = "MyUuidCheck",
-        name = "Bitch Uuid",
-        description = "damn bitch uuid",
-        priority = Priority.CRITICAL,
-        tags = {"bug"})
+@Rule(key = "EzvizUuidCheck")
 
-public class MyUuidCheck extends IssuableSubscriptionVisitor {
+public class EzvizUuidCheck extends IssuableSubscriptionVisitor {
 
     @Override
     public List<Tree.Kind> nodesToVisit() {
@@ -53,7 +49,7 @@ public class MyUuidCheck extends IssuableSubscriptionVisitor {
             if (isClassController(methodSymbol)
                     && isRequestMappingAnnotated(methodSymbol)
                     && parameter.simpleName().name().equalsIgnoreCase("uuid")){
-                reportIssue(methodTree.simpleName(), "请不要直接使用uuid");
+                reportIssue(methodTree.simpleName(), "直接使用uuid时需小心越权问题");
             }
         }
     }

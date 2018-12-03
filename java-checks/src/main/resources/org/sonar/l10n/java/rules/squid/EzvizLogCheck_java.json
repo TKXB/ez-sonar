@@ -1,0 +1,16 @@
+{
+  "title": "日志敏感信息检查",
+  "type": "SECURITY_HOTSPOT",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "5min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Minor",
+  "ruleSpecification": "RSPEC-EzvizLogCheck",
+  "sqKey": "EzvizLogCheck",
+  "scope": "Main"
+}

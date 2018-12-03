@@ -53,9 +53,19 @@ public class HelloWorld {
     @GetMapping(value = "/deviceinfo", method= GET)
     @CustomAnnotation(field1="", field2="", field3="")
     @UserDeviceAccessControl
-    public String getDeviceInfo(String deviceserial) {  // Noncompliant [[sc=19;ec=32]] {{请检查是否有权限校验}}
+    public String getDeviceInfo(String deviceserial) {
         String responseResult = shareOperateService.applyShare(deviceserial);
         return responseResult;
+    }
+
+    @ApiOperation(value = "修改设备布撤防状态")
+    @PutMapping(value = "/v3/devices/{deviceSerial}/defence/change")
+    public DeferredResult<ResponseEntity<IResponseResult>> enableDefence( // Noncompliant
+            @ApiParam(value = "用户ID(sessionId,传sessionId即可)", required = true) @RequestHeader("zuulUserId") String userId,
+            @ApiParam(value = "设备序列号", required = true) @PathVariable("deviceSerial") String deviceSerial,
+            @ModelAttribute @Valid EnableDefanceRequest request) {
+        return deviceConfigV3Proxy.enableDefence(getVersionInfo("DeviceAlarmConfigV3Controller.enableDefence"),deviceSerial, DefenceStatusTypeEnum.parseValue(request.getType()),
+                request.getEnable());
     }
 
 

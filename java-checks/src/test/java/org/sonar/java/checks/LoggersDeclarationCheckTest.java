@@ -36,4 +36,8 @@ public class LoggersDeclarationCheckTest {
     JavaCheckVerifier.verify("src/test/files/checks/LoggersDeclarationCheckCustom.java", check);
   }
 
+  @Test
+  public void ezvizdetected() {
+    JavaCheckVerifier.verify("src/test/files/checks/EzvizLogCheck.java", new EzvizLogCheck());
+  }
 }

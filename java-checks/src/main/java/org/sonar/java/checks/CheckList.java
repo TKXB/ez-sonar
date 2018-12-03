@@ -69,7 +69,7 @@ import org.sonar.java.checks.serialization.SerializableSuperConstructorCheck;
 import org.sonar.java.checks.spring.ControllerWithSessionAttributesCheck;
 import org.sonar.java.checks.spring.PersistentEntityUsedAsRequestParameterCheck;
 import org.sonar.java.checks.spring.RequestMappingMethodPublicCheck;
-import org.sonar.java.checks.spring.MyUuidCheck;
+import org.sonar.java.checks.spring.EzvizUuidCheck;
 import org.sonar.java.checks.spring.EzvizDeviceIdCheck;
 import org.sonar.java.checks.spring.SpringAntMatcherOrderCheck;
 import org.sonar.java.checks.spring.SpringAutoConfigurationCheck;
@@ -607,8 +607,9 @@ public final class CheckList {
       .add(SpringEndpointsCheck.class)
       .add(ExecCallCheck.class)
       .add(EmptyDatabasePasswordCheck.class)
-            .add(MyUuidCheck.class)
+            .add(EzvizUuidCheck.class)
             .add(EzvizDeviceIdCheck.class)
+            .add(EzvizLogCheck.class)
       .build();
   }
 
