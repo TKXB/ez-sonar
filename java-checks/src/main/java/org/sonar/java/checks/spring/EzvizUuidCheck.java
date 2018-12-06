@@ -36,8 +36,7 @@ public class EzvizUuidCheck extends IssuableSubscriptionVisitor {
     );
 
     private static final List<String> USERID = Arrays.asList(
-            "uuid",
-            "userid"
+            "uuid"
             );
 
     @Override
