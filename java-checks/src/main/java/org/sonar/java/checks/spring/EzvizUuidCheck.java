@@ -35,6 +35,11 @@ public class EzvizUuidCheck extends IssuableSubscriptionVisitor {
             "org.springframework.web.bind.annotation.PatchMapping"
     );
 
+    private static final List<String> USERID = Arrays.asList(
+            "uuid",
+            "userid"
+            );
+
     @Override
     public void visitNode(Tree tree) {
         if (!hasSemantic()) {
@@ -48,7 +53,7 @@ public class EzvizUuidCheck extends IssuableSubscriptionVisitor {
         for (VariableTree parameter:parameters) {
             if (isClassController(methodSymbol)
                     && isRequestMappingAnnotated(methodSymbol)
-                    && parameter.simpleName().name().equalsIgnoreCase("uuid")){
+                    && isUserId(parameter.simpleName().name())){
                 reportIssue(methodTree.simpleName(), "直接使用uuid时需小心越权问题");
             }
         }
@@ -60,6 +65,10 @@ public class EzvizUuidCheck extends IssuableSubscriptionVisitor {
 
     private static boolean isRequestMappingAnnotated(Symbol.MethodSymbol methodSymbol) {
         return REQUEST_ANNOTATIONS.stream().anyMatch(methodSymbol.metadata()::isAnnotatedWith);
+    }
+
+    private static boolean isUserId(String userid){
+        return USERID.stream().anyMatch(userid::equalsIgnoreCase);
     }
 
 }

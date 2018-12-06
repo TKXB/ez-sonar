@@ -34,13 +34,11 @@ import org.sonar.plugins.java.api.tree.*;
 public class EzvizLogCheck extends AbstractMethodDetection {
     private static final Set<String> SUSPICIOUS_TOKEN_VALUES = ImmutableSet.of(
             "pwd",
-            "key",
+            "secretkey",
             "password",
             "passwd",
             "密码",
-            "身份证",
-            "phone",
-                "手机号");
+            "身份证");
     private static final String JAVA_SLF4J_CLASS_NAME = "org.slf4j.Logger";
     private static final String JAVA_APACHE_LOG4J_CLASS_NAME = "org.apache.log4j.Logger";
     private static final String JAVA_APACHE_LOGGING_LOG4J_CLASS_NAME = "org.apache.logging.log4j.Logger";
@@ -49,19 +47,19 @@ public class EzvizLogCheck extends AbstractMethodDetection {
     @Override
     protected List<MethodMatcher> getMethodInvocationMatchers() {
         return Arrays.asList(
-                MethodMatcher.create().typeDefinition(JAVA_SLF4J_CLASS_NAME).name("debug").withAnyParameters(),
+//                MethodMatcher.create().typeDefinition(JAVA_SLF4J_CLASS_NAME).name("debug").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_SLF4J_CLASS_NAME).name("info").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_SLF4J_CLASS_NAME).name("warn").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_SLF4J_CLASS_NAME).name("error").withAnyParameters(),
-                MethodMatcher.create().typeDefinition(JAVA_APACHE_LOG4J_CLASS_NAME).name("debug").withAnyParameters(),
+//                MethodMatcher.create().typeDefinition(JAVA_APACHE_LOG4J_CLASS_NAME).name("debug").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_APACHE_LOG4J_CLASS_NAME).name("info").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_APACHE_LOG4J_CLASS_NAME).name("warn").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_APACHE_LOG4J_CLASS_NAME).name("error").withAnyParameters(),
-                MethodMatcher.create().typeDefinition(JAVA_APACHE_LOGGING_LOG4J_CLASS_NAME).name("debug").withAnyParameters(),
+//                MethodMatcher.create().typeDefinition(JAVA_APACHE_LOGGING_LOG4J_CLASS_NAME).name("debug").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_APACHE_LOGGING_LOG4J_CLASS_NAME).name("info").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_APACHE_LOGGING_LOG4J_CLASS_NAME).name("warn").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_APACHE_LOGGING_LOG4J_CLASS_NAME).name("error").withAnyParameters(),
-                MethodMatcher.create().typeDefinition(JAVA_HIK_LOG_CLASS_NAME).name("debug").withAnyParameters(),
+//                MethodMatcher.create().typeDefinition(JAVA_HIK_LOG_CLASS_NAME).name("debug").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_HIK_LOG_CLASS_NAME).name("info").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_HIK_LOG_CLASS_NAME).name("warn").withAnyParameters(),
                 MethodMatcher.create().typeDefinition(JAVA_HIK_LOG_CLASS_NAME).name("error").withAnyParameters()

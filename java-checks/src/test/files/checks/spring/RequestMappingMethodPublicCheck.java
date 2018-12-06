@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorld {
 
   @RequestMapping(value = "/helloBitch", method = RequestMethod.GET)
-  public String hello(String greetee) { // Compliant
+  public String hello(String userid) { // Noncompliant
   }
 
   @RequestMapping(value = "/greet", method = GET)
