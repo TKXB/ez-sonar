@@ -1,9 +1,12 @@
 class Foo {
 
   int unusedField;
+  String unbbbbbbbb = "wwwwwhaha";
 
   public void f(int unusedParameter) {
     int unusedLocalVariable; // Noncompliant [[sc=9;=ec=28]] {{Remove this unused "unusedLocalVariable" local variable.}}
+
+    String unsed = "hahaha"; // Noncompliant
 
     int usedLocalVariable = 42;
     System.out.println(usedLocalVariable);

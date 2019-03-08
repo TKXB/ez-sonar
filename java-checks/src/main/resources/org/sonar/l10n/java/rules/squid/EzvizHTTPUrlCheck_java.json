@@ -1,0 +1,16 @@
+{
+  "title": "不安全的URL地址",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "5min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Minor",
+  "ruleSpecification": "RSPEC-EzvizHTTPUrlCheck",
+  "sqKey": "EzvizHTTPUrlCheck",
+  "scope": "Main"
+}

@@ -42,22 +42,7 @@ import org.sonar.java.checks.naming.KeywordAsIdentifierCheck;
 import org.sonar.java.checks.naming.MethodNameSameAsClassCheck;
 import org.sonar.java.checks.naming.MethodNamedEqualsCheck;
 import org.sonar.java.checks.naming.MethodNamedHashcodeOrEqualCheck;
-import org.sonar.java.checks.security.AESAlgorithmCheck;
-import org.sonar.java.checks.security.CipherBlockChainingCheck;
-import org.sonar.java.checks.security.CookieHttpOnlyCheck;
-import org.sonar.java.checks.security.CookieShouldNotContainSensitiveDataCheck;
-import org.sonar.java.checks.security.CryptographicKeySizeCheck;
-import org.sonar.java.checks.security.ExecCallCheck;
-import org.sonar.java.checks.security.EmptyDatabasePasswordCheck;
-import org.sonar.java.checks.security.HostnameVerifierImplementationCheck;
-import org.sonar.java.checks.security.IntegerToHexStringCheck;
-import org.sonar.java.checks.security.LDAPAuthenticatedConnectionCheck;
-import org.sonar.java.checks.security.LDAPDeserializationCheck;
-import org.sonar.java.checks.security.SMTPSSLServerIdentityCheck;
-import org.sonar.java.checks.security.SecureCookieCheck;
-import org.sonar.java.checks.security.SecureXmlTransformerCheck;
-import org.sonar.java.checks.security.TrustManagerCertificateCheck;
-import org.sonar.java.checks.security.XmlExternalEntityProcessingCheck;
+import org.sonar.java.checks.security.*;
 import org.sonar.java.checks.serialization.CustomSerializationMethodCheck;
 import org.sonar.java.checks.serialization.ExternalizableClassConstructorCheck;
 import org.sonar.java.checks.serialization.PrivateReadResolveCheck;
@@ -610,6 +595,7 @@ public final class CheckList {
             .add(EzvizUuidCheck.class)
             .add(EzvizDeviceIdCheck.class)
             .add(EzvizLogCheck.class)
+            .add(EzvizHTTPUrlCheck.class)
       .build();
   }
 
