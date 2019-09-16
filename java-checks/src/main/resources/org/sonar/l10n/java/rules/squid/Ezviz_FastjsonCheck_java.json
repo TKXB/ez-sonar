@@ -1,0 +1,16 @@
+{
+  "title": "此版本fastjson包含高危漏洞",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "60min"
+  },
+  "tags": [
+    "apache"
+  ],
+  "defaultSeverity": "Critical",
+  "ruleSpecification": "RSPEC-Ezviz_FastjsonCheck",
+  "sqKey": "Ezviz_FastjsonCheck",
+  "scope": "All"
+}

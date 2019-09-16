@@ -14,8 +14,8 @@ import org.sonar.maven.model.maven2.Dependency;
 import javax.annotation.Nullable;
 import java.util.List;
 
-@Rule(key = "EzvizFastjsonCheck")
-public class EzvizFastjsonCheck implements PomCheck {
+@Rule(key = "Ezviz_FastjsonCheck")
+public class Ezviz_FastjsonCheck implements PomCheck {
 
     @Override
     public void scanFile(PomCheckContext context) {

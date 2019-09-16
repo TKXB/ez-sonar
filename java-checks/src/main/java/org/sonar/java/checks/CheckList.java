@@ -652,6 +652,7 @@ public final class CheckList {
       .add(DeprecatedPomPropertiesCheck.class)
             .add(EzvizStruts2_S2_057Check.class)
             .add(Ezviz_CVE_2016_1000031Check.class)
+            .add(Ezviz_FastjsonCheck.class)
       .build();
   }
 }

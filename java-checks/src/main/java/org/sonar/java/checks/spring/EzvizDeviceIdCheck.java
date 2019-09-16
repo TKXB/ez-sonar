@@ -51,7 +51,8 @@ public class EzvizDeviceIdCheck extends IssuableSubscriptionVisitor {
     private static final List<String> AUTH_KEYS = Arrays.asList(
             "userid",
             "session",
-            "userinfo"
+            "userinfo",
+            "accesstoken"
     );
 
     private static final List<String> AUTH_ANNOTATIONS = Arrays.asList(
@@ -65,7 +66,7 @@ public class EzvizDeviceIdCheck extends IssuableSubscriptionVisitor {
         }
 
         MethodTree methodTree = (MethodTree) tree;
-        BlockTree block = methodTree.block();               //block可能为空，待处理
+        BlockTree block = methodTree.block();
         if (block != null) {
             int beginline = block.openBraceToken().line();
             int endline = block.closeBraceToken().line();
